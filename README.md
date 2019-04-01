@@ -1,2 +1,2 @@
 # Clicky-Game
-A memory game with created with Reactjs
+A memory game created with Reactjs
