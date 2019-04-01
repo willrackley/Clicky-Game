@@ -1,5 +1,67 @@
 [
     {
-        
+        "id": 1,
+        "src": "https://media.giphy.com/media/yMN6JhJDWwygo/giphy.gif",
+        "desc": "Peter shocking Meg"
+    },
+    {
+        "id": 2,
+        "src": "https://media.giphy.com/media/TAnkFxASy91CM/giphy.gif",
+        "desc": "Family Guy superheroes"
+    },
+    {
+        "id": 3,
+        "src": "https://media.giphy.com/media/IHMUsUqAr5VU4/giphy.gif",
+        "desc": "Stewie and Brian ride grandparents"
+    },
+    {
+        "id": 4,
+        "src": "https://media.giphy.com/media/y7Hs0IEEc0zIc/giphy.gif",
+        "desc": "Crazy Stewie"
+    },
+    {
+        "id": 5,
+        "src": "https://media.giphy.com/media/FeFVaCaun5Yt2/giphy.gif",
+        "desc": "Brian playing with his girlfriend"
+    },
+    {
+        "id": 6,
+        "src": "https://media.giphy.com/media/l0HlOKdHaQDurpQu4/giphy.gif",
+        "desc": "Hungry Stewie"
+    },
+    {
+        "id": 7,
+        "src": "https://media.giphy.com/media/tN8RpvKWpP5xS/giphy.gif",
+        "desc": "Brian spinning Stewie"
+    },
+    {
+        "id": 8,
+        "src": "https://media.giphy.com/media/l0HlIrxJGgLU6yomY/giphy.gif",
+        "desc": "Peter diving on couch"
+    },
+    {
+        "id": 9,
+        "src": "https://media.giphy.com/media/s2fsl8NF7ZTiw/giphy.gif",
+        "desc": "Stewie with Owl"
+    },
+    {
+        "id": 10,
+        "src": "https://media.giphy.com/media/3o6ZtpRoYe9wbyfcBi/giphy.gif",
+        "desc": "Peter hurts his knee"
+    },
+    {
+        "id": 11,
+        "src": "https://media.giphy.com/media/cZ3joysqln2M0/giphy.gif",
+        "desc": "Crazy Peter"
+    },
+    {
+        "id": 12,
+        "src": "https://media.giphy.com/media/13B4SHzq0P06rK/giphy.gif",
+        "desc": "Stewie visits Santa's Village"
+    },
+    {
+        "id": 13,
+        "src": "https://media.giphy.com/media/jfQq7ITh29yFi/giphy.gif",
+        "desc": "Stewie gets excited"
     }
 ]

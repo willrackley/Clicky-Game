@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-//import ImageCards from "./components/ImageCards";
+import ImageCards from "./components/ImageCard";
 import Wrapper from "./components/Wrapper";
+import images from "./images.json"
 
 class App extends Component {
 
   state = {
-    images: []
+    images
    };
 
   render() {
@@ -24,10 +25,16 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div>
-        <div className="card" style={{width: "18rem"}}>
-          <img src="https://media.giphy.com/media/yMN6JhJDWwygo/giphy.gif" className="card-img-top" alt="family-guy"/>
-          
+        <div className="container">
+          <div className="card-columns">
+            {this.state.images.map(images => (
+              <ImageCards
+                id={images.id}
+                key={images.id}
+                desc={images.desc}
+                src={images.src}
+              />
+            ))}
           </div>
         </div>
       </Wrapper>
