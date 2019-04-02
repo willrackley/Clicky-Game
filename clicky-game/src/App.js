@@ -4,19 +4,18 @@ import Wrapper from "./components/Wrapper";
 import images from "./images.json"
 let scoreKeeper = [];
 
-
 class App extends Component {
 
   state = {
     images,
     count: 0,
     topScore: 0,
-    clicked: []
+    clicked: [],
+    message: "click on an image to get started"
    };
 
    
   handleClick = (id) => {
-    
     //when we click an image we add the concat the id to the 
     //clicked array and if that id is already there when we concat on the click
     //then we end the game
@@ -25,6 +24,7 @@ class App extends Component {
       this.setState({count: 0})
       this.setState({clicked: []})
       this.setState({topScore: finalCount})
+      this.setState({message: "GAME OVER, click a gif to play again!"})
       if(finalCount > this.state.topScore){
         this.setState({topScore: this.state.count})
       }
@@ -33,11 +33,9 @@ class App extends Component {
       this.shuffle(images);
       this.setState({clicked: this.state.clicked.concat([id])})
       this.setState({count: this.state.count + 1});
+      this.setState({message: "Nice, choose another gif!"})
       scoreKeeper.push(this.state.count + 1);
-      console.log(scoreKeeper)
-    } 
-
-    
+    }  
   }
 
   //use the Fisher-Yates shuffle algorithm
@@ -57,7 +55,7 @@ class App extends Component {
         <div className="container">
           <div className="row text-center p-3">
             <div className="col-md-6">
-              <span>click on an image to get started</span>
+              <span>{this.state.message}</span>
             </div>
             <div className="col-md-6">
               <span>{`Score: ${this.state.count} | Top Score: ${this.state.topScore}`}</span>
