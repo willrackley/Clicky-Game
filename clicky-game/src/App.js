@@ -2,7 +2,13 @@ import React, { Component } from 'react';
 import ImageCards from "./components/ImageCard";
 import Wrapper from "./components/Wrapper";
 import images from "./images.json"
+
 let scoreKeeper = [];
+let filter;
+const addGrayscale = {
+  WebkitFilter: 'grayscale(100%)',
+  filter: 'grayscale(100%)',
+}
 
 class App extends Component {
 
@@ -20,6 +26,7 @@ class App extends Component {
     //clicked array and if that id is already there when we concat on the click
     //then we end the game
     if(this.state.clicked.includes(id)){
+      filter = addGrayscale;
       const finalCount = scoreKeeper[scoreKeeper.length - 1]
       this.setState({count: 0})
       this.setState({clicked: []})
@@ -30,6 +37,7 @@ class App extends Component {
       }
       scoreKeeper = [];
     } else {
+      filter = {};
       this.shuffle(images);
       this.setState({clicked: this.state.clicked.concat([id])})
       this.setState({count: this.state.count + 1});
@@ -62,7 +70,8 @@ class App extends Component {
             </div>
           </div>
         </div>
-        <div className="container">
+        
+        <div className="container" style={filter}>
           <div className="card-columns">
             {this.state.images.map(images => (
               <ImageCards
@@ -74,7 +83,6 @@ class App extends Component {
               />
             ))}
           </div>
-        
         </div>
       </Wrapper>
     );
