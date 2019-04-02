@@ -2,18 +2,57 @@ import React, { Component } from 'react';
 import ImageCards from "./components/ImageCard";
 import Wrapper from "./components/Wrapper";
 import images from "./images.json"
+let scoreKeeper = [];
+
 
 class App extends Component {
 
   state = {
-    images
+    images,
+    count: 0,
+    topScore: 0,
+    clicked: []
    };
+
+   
+  handleClick = (id) => {
+    
+    //when we click an image we add the concat the id to the 
+    //clicked array and if that id is already there when we concat on the click
+    //then we end the game
+    if(this.state.clicked.includes(id)){
+      const finalCount = scoreKeeper[scoreKeeper.length - 1]
+      this.setState({count: 0})
+      this.setState({clicked: []})
+      this.setState({topScore: finalCount})
+      if(finalCount > this.state.topScore){
+        this.setState({topScore: this.state.count})
+      }
+      scoreKeeper = [];
+    } else {
+      this.shuffle(images);
+      this.setState({clicked: this.state.clicked.concat([id])})
+      this.setState({count: this.state.count + 1});
+      scoreKeeper.push(this.state.count + 1);
+      console.log(scoreKeeper)
+    } 
+
+    
+  }
+
+  //use the Fisher-Yates shuffle algorithm
+  shuffle = (array) => {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
 
   render() {
     return (
       <Wrapper>
-        <nav class="navbar navbar-light bg-light">
-          <span class="navbar-brand mb-0 h1 mx-auto">Clicky Game</span>
+        <nav className="navbar navbar-light bg-light">
+          <span className="navbar-brand mb-0 h1 mx-auto">Clicky Game</span>
         </nav>
         <div className="container">
           <div className="row text-center p-3">
@@ -21,7 +60,7 @@ class App extends Component {
               <span>click on an image to get started</span>
             </div>
             <div className="col-md-6">
-              <span>score: 0 | Top Score: 0</span>
+              <span>{`Score: ${this.state.count} | Top Score: ${this.state.topScore}`}</span>
             </div>
           </div>
         </div>
@@ -33,9 +72,11 @@ class App extends Component {
                 key={images.id}
                 desc={images.desc}
                 src={images.src}
+                handleClick={this.handleClick}
               />
             ))}
           </div>
+        
         </div>
       </Wrapper>
     );
