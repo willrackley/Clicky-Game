@@ -1,0 +1,56 @@
+body {
+    background-image: url("./components/images/tic-tac-toe.png");
+}
+nav {
+    background: #fff8a7;
+}
+
+.navbar-brand {
+    color: #456abb;
+    font-size: 44px;
+    font-family: 'Bungee Shade', cursive;
+    letter-spacing: 2.5px;
+}
+
+.instructions {
+    font-size: 24px;
+    color: #456abb;
+    -webkit-animation: pulsate 2s ease-out;
+    -webkit-animation-iteration-count: infinite; 
+    opacity: 0.5;
+    font-weight: bold;
+    background: #ffffff80;
+}
+@-webkit-keyframes pulsate {
+    0% { 
+        opacity: 0.5;
+    }
+    50% { 
+        opacity: 1.0;
+    }
+    100% { 
+        opacity: 0.5;
+    }
+}
+
+.gameTextbox {
+    background: #456abb;
+    border-top: 6px solid #fff8a7;
+    border-left: 6px solid #fff8a7;
+    border-right: 6px solid #fff8a7;
+    color: #ffffff;
+}
+
+.gifBox {
+    border-bottom: 6px solid #fff8a7;
+    border-left: 6px solid #fff8a7;
+    border-right: 6px solid #fff8a7;
+}
+
+.score {
+    font-size: 24px;
+}
+
+.gameHeadline {
+    font-size: 24px;
+}

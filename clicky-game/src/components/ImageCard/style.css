@@ -1,3 +1,12 @@
-.card  img{
-    overflow: hidden;
+.card  {
+    transition: box-shadow .3s;
+    transition: all .3s ease-in-out; 
+    border: 4px solid #dfdfdf;
+}
+
+
+.card:hover {
+    box-shadow: 10px 15px 15px #456abb77;
+    z-index: 1000;
+    transform: scale(1.1);
 }
