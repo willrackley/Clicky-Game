@@ -29,7 +29,7 @@ class App extends Component {
   handleClick = (id) => {
     //when we click an image we add the concat the id to the 
     //clicked array and if that id is already there when we concat on the click
-    //then we end the game
+    //then we end the game and user clicks to replay
     if(this.state.clicked.includes(id)){
       filter = addGrayscale;
       displayNone = {};
