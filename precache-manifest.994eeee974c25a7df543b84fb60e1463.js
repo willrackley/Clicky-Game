@@ -20,7 +20,7 @@ self.__precacheManifest = [
     "url": "/Clicky-Game/static/media/tic-tac-toe.a2e9b7c1.png"
   },
   {
-    "revision": "f30bdaf015ba0d450c1a8a55d670c695",
+    "revision": "bda2f8229a95202ab18ed7f07bfc2bd1",
     "url": "/Clicky-Game/index.html"
   }
 ];
