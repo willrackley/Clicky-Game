@@ -6,10 +6,13 @@ import "./App.css"
 
 let scoreKeeper = [];
 let filter;
+
 const addGrayscale = {
   WebkitFilter: 'grayscale(100%)',
   filter: 'grayscale(100%)',
+  WebkitAnimation: 'shake 0.1s ease-in-out 0.1s 2 alternate'
 }
+
 let displayNone;
 const noDisplay = {
   display: 'none'
@@ -22,7 +25,7 @@ class App extends Component {
     count: 0,
     topScore: 0,
     clicked: [],
-    message: "Click on an image to get started!"
+    message: "Click on an image to get started!",
    };
 
    
@@ -43,9 +46,6 @@ class App extends Component {
       } else {
         this.setState({topScore: this.state.topScore})
       }
-      
-      console.log(`topScore: ${this.state.topScore}`)
-      console.log(`finalCount: ${finalCount}`)
       scoreKeeper = [];
     } else {
       filter = {};
@@ -54,8 +54,9 @@ class App extends Component {
       this.setState({clicked: this.state.clicked.concat([id])})
       this.setState({count: this.state.count + 1});
       this.setState({message: "NICE, good guess!"})
-      scoreKeeper.push(this.state.count + 1);
-    }  
+      scoreKeeper.push(this.state.count + 1); 
+      this.setState({animated: false})
+    } 
   }
 
   //use the Fisher-Yates shuffle algorithm
@@ -66,18 +67,15 @@ class App extends Component {
     }
   }
 
-  
   render() {
     return (
       <Wrapper>
         <nav className="navbar">
           <span className="navbar-brand mb-0 h1 mx-auto">Clicky Game</span>
         </nav>
-
         <div className="container" style={displayNone}>
           <div className="text-center instructions p-4">CLICK ON A GIF TO EARN POINTS, BUT DONT CLICK ON ANY MORE THAN ONCE!</div>
         </div>
-
         <div className="container gameTextbox">
           <div className="row p-3">
             <div className="col-md-6 gameHeadline">
@@ -88,7 +86,6 @@ class App extends Component {
             </div>
           </div>
         </div>
-        
         <div className="container gifBox bg-white mb-5" style={filter}>
           <div className="card-columns py-3">
             {this.state.images.map(images => (
